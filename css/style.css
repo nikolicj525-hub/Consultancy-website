@@ -290,6 +290,134 @@ section { padding: 72px 0; }
   margin-bottom: 14px;
 }
 
+/* ===== Status badges ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge-live { background: #e6f5ec; color: #147a4a; }
+.badge-pending { background: #fff6dc; color: #a5760a; }
+.badge-proposal { background: #e8edfb; color: var(--eu-blue); }
+
+/* ===== Dossier cards (Regulatory Watch) ===== */
+.dossier-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dossier-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.dossier-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.dossier-head h3 { margin: 0; font-size: 1.35rem; }
+
+.dossier-ref {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0 0 20px;
+}
+
+.dossier-body {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+}
+
+.dossier-body h4 {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.dossier-body p { margin: 0 0 14px; }
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--border);
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 18px 22px;
+}
+
+.timeline li:last-child { padding-bottom: 0; }
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--eu-blue);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+.timeline .date {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--eu-blue);
+}
+
+.timeline .desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.dossier-sources {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.dossier-sources a { margin-right: 16px; }
+
+.last-updated {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: -24px 0 40px;
+}
+
 /* ===== CTA band ===== */
 .cta-band {
   background: var(--eu-blue);
@@ -379,6 +507,7 @@ section { padding: 72px 0; }
   .hero .container { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
   .contact-grid { grid-template-columns: 1fr; }
+  .dossier-body { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
